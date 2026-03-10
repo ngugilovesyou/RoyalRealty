@@ -9,7 +9,7 @@ const lands = [
     id: 1,
     title: "Prime Residential Plot",
     location: "Kilimani",
-    price: "$45,000",
+    price: "Ksh 4,500,000",
     image:
       "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80",
   },
@@ -17,7 +17,7 @@ const lands = [
     id: 2,
     title: "Scenic Investment Land",
     location: "Naivasha",
-    price: "$32,000",
+    price: "Ksh. 3,000,000",
     image:
       "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=80",
   },
@@ -25,9 +25,9 @@ const lands = [
     id: 3,
     title: "Future Development Plot",
     location: "Kitengela",
-    price: "$28,500",
+    price: "Ksh 2,500,000",
     image:
-      "https://images.unsplash.com/photo-1493244040629-496f6d136cc3?w=1200&q=80",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHxlbnwwfHwwfHx8MA%3D%3D",
   },
 ];
 
