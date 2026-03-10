@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "framer-motion": "^12.35.2",
+    "lucide-react": "^0.577.0",
+    "next": "^16.1.6",
+    "postcss": "^8.5.8",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.1"
+  }
+}
