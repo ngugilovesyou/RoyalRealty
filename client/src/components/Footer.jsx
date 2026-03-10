@@ -52,7 +52,7 @@ export default function Footer() {
         <div>
           <h3 className="font-serif text-lg font-semibold mb-4">Royal Realty</h3>
           <p className="text-sm text-white/80 leading-relaxed mb-4">
-            Helping you invest in land securely, with honesty, transparency, and care for over 15 years.
+            Helping you invest in land securely, with honesty, transparency, and care.
           </p>
           <p className="text-xs text-white/60">&copy; {new Date().getFullYear()} Royal Realty. All rights reserved.</p>
         </div>
