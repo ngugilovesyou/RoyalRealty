@@ -25,9 +25,6 @@ app = Flask(
     static_folder=STATIC_FOLDER,   
     static_url_path='/static'       
 )
-app.config.from_object(Config)
-
-from flask_cors import CORS
 
 CORS(
     app, 
@@ -38,6 +35,9 @@ CORS(
     expose_headers=["Content-Type", "Authorization"],
     max_age=3600
 )
+
+
+app.config.from_object(Config)
 
 
 
