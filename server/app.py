@@ -28,7 +28,7 @@ app = Flask(
 
 CORS(
     app, 
-    resources={r"/api/*": {"origins": ["http://localhost:3000", "https://royal-realty-ten.vercel.app"]}},
+    resources={r"/api/*": {"origins": ["http://localhost:3000", "https://royal-realty-ten.vercel.app", "https://royalrealtyapi.onrender.com"]}},
     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization", "X-Requested-With"],
     supports_credentials=True,
