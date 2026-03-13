@@ -17,13 +17,17 @@ from services.land_service import (
 
 land_bp = Blueprint("lands", __name__, url_prefix="/api")
 
-@land_bp.route("/sell-land", methods=["POST"])
+@land_bp.route("/sell-land", methods=["POST", "OPTIONS"])
 def sell_land():
+    if request.method == "OPTIONS":
+        return "", 200
     return sell_land_service()
 
-@land_bp.route("/admin/lands/pending", methods=["GET"])
+@land_bp.route("/admin/lands/pending", methods=["GET", "OPTIONS"])
 @jwt_required()
 def get_pending():
+    if request.method == "OPTIONS":
+        return "", 200
     return get_pending_lands()
 
 @land_bp.route('/lands/approved', methods=['GET', 'OPTIONS'])
@@ -58,31 +62,39 @@ def get_rejected():
         return "", 200
     return get_rejected_lands()
 
-@land_bp.route("/admin/lands/<int:land_id>", methods=["PUT"])
+@land_bp.route("/admin/lands/<int:land_id>", methods=["PUT", "OPTIONS"])
 @jwt_required()
 def update_land(land_id):
+    if request.method == "OPTIONS":
+        return "", 200
 
     data = request.get_json()
 
     return update_land_service(land_id,data)
 
 
-@land_bp.route("/admin/lands/<int:land_id>", methods=["DELETE"])
+@land_bp.route("/admin/lands/<int:land_id>", methods=["DELETE", "OPTIONS"])
 @jwt_required()
 def delete_land(land_id):
+    if request.method == "OPTIONS":
+        return "", 200
 
     return delete_land_service(land_id)
 
 
-@land_bp.route("/lands", methods=["GET"])
+@land_bp.route("/lands", methods=["GET", "OPTIONS"])
 def public_lands():
+    if request.method == "OPTIONS":
+        return "", 200
 
     return public_lands_service()
 
 
 
-@land_bp.route("/lands/featured", methods=["GET"])
+@land_bp.route("/lands/featured", methods=["GET", "OPTIONS"])
 def get_featured_lands():
+    if request.method == "OPTIONS":
+        return "", 200
     lands = (
         LandSubmission.query
         .filter_by(status="approved")
@@ -124,9 +136,11 @@ def get_featured_lands():
 
 
 # In your routes
-@land_bp.route('/admin/lands/<int:land_id>', methods=['GET'])
+@land_bp.route('/admin/lands/<int:land_id>', methods=['GET', "OPTIONS"])
 @jwt_required()
 def get_land_by_id(land_id):
+    if request.method == "OPTIONS":
+        return "", 200
     land = LandSubmission.query.get(land_id)
     if not land:
         return jsonify({"error": "Land not found"}), 404
@@ -152,4 +166,6 @@ def get_land_by_id(land_id):
 @land_bp.route("/admin/lands/create", methods=["POST", "OPTIONS"])
 @jwt_required()
 def create_admin_lands():
+    if request.method == "OPTIONS":
+        return "", 200
     return create_admin_land()

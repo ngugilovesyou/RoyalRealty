@@ -17,6 +17,8 @@ def register_admin():
 
 @auth_bp.route("/login", methods=["POST","OPTIONS"])
 def login():
+    if request.method == "OPTIONS":
+        return "", 200
 
     if request.method == "OPTIONS":
         return jsonify({"message":"OK"}),200
@@ -26,16 +28,20 @@ def login():
     return login_admin(data)
 
 
-@auth_bp.route("/verify", methods=["GET"])
+@auth_bp.route("/verify", methods=["GET", "OPTIONS"])
 @jwt_required(optional=True)
 def verify():
+    if request.method == "OPTIONS":
+        return "", 200
 
     return verify_admin_token()
 
 
-@auth_bp.route("/logout", methods=["POST"])
+@auth_bp.route("/logout", methods=["POST", "OPTIONS"])
 @jwt_required()
 def logout():
+    if request.method == "OPTIONS":
+        return "", 200
 
     return jsonify({
         "success":True,
