@@ -16,7 +16,7 @@ const cardVariants = {
 
 // Add the getImageUrl function
 const getImageUrl = (path) => {
-  if (!path) return "/placeholder-property.jpg";
+  if (!path) return "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
   if (path.startsWith("http")) return path;
   
   // Extract just the filename
@@ -127,7 +127,7 @@ export default function FeaturedLands() {
                     alt={land.title}
                     onError={(e) => {
                       console.log("Image failed to load:", land.images?.[0]);
-                      e.target.src = "/placeholder-property.jpg";
+                      e.target.src = "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
                     }}
                     className="w-full h-full object-cover"
                   />
@@ -195,7 +195,7 @@ export default function FeaturedLands() {
                           alt={`${selectedListing.title} ${i + 1}`}
                           onError={(e) => {
                             console.log("Modal image failed to load:", img);
-                            e.target.src = "/placeholder-property.jpg";
+                            e.target.src = "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
                           }}
                           className="w-full h-full object-cover rounded-lg"
                         />

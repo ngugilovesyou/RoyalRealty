@@ -332,7 +332,7 @@ const getImageUrl = (path) => {
   src={getImageUrl(land.images[0])}
   alt={land.title}
   onError={(e) => {
-    e.target.src = "/placeholder-property.jpg";
+    e.target.src = "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
   }}
   className="w-full h-full object-cover"
 />
@@ -454,7 +454,7 @@ const getImageUrl = (path) => {
   src={getImageUrl(img)}
   alt={`Property ${idx + 1}`}
   onError={(e) => {
-    e.target.src = "/placeholder-property.jpg";
+    e.target.src = "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
   }}
   className="h-24 w-24 object-cover rounded-lg flex-shrink-0"
 />

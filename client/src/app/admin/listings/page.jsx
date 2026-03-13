@@ -440,7 +440,7 @@ export default function ListingsPage() {
                       src={listing.images[0]} 
                       alt={listing.title}
                       onError={(e) => {
-    e.target.src = "/placeholder-property.jpg";
+    e.target.src = "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
   }}
                       className="w-full h-full object-cover"
                     />

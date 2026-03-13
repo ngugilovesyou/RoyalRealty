@@ -49,7 +49,7 @@ export default function PendingApprovals() {
 const API_BASE = "";  
 
 const getImageUrl = (path) => {
-  if (!path) return "/placeholder-property.jpg";
+  if (!path) return "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
   if (path.startsWith("http")) return path;
   
   // Get just the filename from whatever path format
@@ -378,7 +378,7 @@ const getImageUrl = (path) => {
                     <img 
   src={getImageUrl(listing.images[0])}
   onError={(e) => {
-    e.target.src = "/placeholder-property.jpg";
+    e.target.src = "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
   }}
   alt={listing.title}
   className="w-full h-full object-cover rounded-lg"
@@ -558,7 +558,7 @@ const getImageUrl = (path) => {
   src={getImageUrl(img)} 
       alt={selectedListing.title}
   onError={(e) => {
-    e.target.src = "/placeholder-property.jpg";
+    e.target.src = "/assets/federico-respini-sYffw0LNr7s-unsplash.jpg";
   }}
   className="w-full h-full object-cover rounded-lg"
 />
