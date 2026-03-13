@@ -40,7 +40,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://royalrealty.co.ke/api/:path*", 
+        destination: "https://royalrealtyapi.onrender.com/:path*", 
       },
     ];
   },
