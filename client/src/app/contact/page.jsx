@@ -3,8 +3,58 @@
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-
+import { useState } from "react";
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  message: ""
+});
+
+const [status, setStatus] = useState(null);
+
+const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  setFormData(prev => ({
+    ...prev,
+    [name]: value
+  }));
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const data = new FormData();
+
+  data.append("name", formData.name);
+  data.append("email", formData.email);
+  data.append("message", formData.message);
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (!res.ok) throw new Error();
+
+    setStatus("success");
+    
+
+    setFormData({
+      name: "",
+      email: "",
+      message: ""
+    });
+
+  } catch (err) {
+    setStatus("error");
+  }
+};
   return (
     <>
       <Navbar />
@@ -23,7 +73,7 @@ export default function ContactPage() {
               Fill out the form below and we’ll get back to you as soon as possible.
             </p>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
 
               <div>
                 <label className="block text-sm font-medium mb-2">
@@ -32,6 +82,9 @@ export default function ContactPage() {
 
                 <input
                   type="text"
+                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your Name"
                   className="w-full border border-gray-300 rounded-md px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#2F6B3C]"
                 />
@@ -44,6 +97,9 @@ export default function ContactPage() {
 
                 <input
                   type="email"
+                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="you@example.com"
                   className="w-full border border-gray-300 rounded-md px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#2F6B3C]"
                 />
@@ -56,6 +112,9 @@ export default function ContactPage() {
 
                 <textarea
                   rows="5"
+                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Your Message"
                   className="w-full border border-gray-300 rounded-md px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#2F6B3C]"
                 />

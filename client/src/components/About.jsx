@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="bg-[#F6F4ED] py-24 px-6">
+    <section id="about" aria-label="About Royal Realty" className="bg-[#F6F4ED] py-24 px-6">
       <div className="max-w-4xl mx-auto text-center">
         {/* Label */}
         <motion.p

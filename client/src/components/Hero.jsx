@@ -29,7 +29,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center gap-2.5 text-[#a8d4b0] text-xs font-medium tracking-[0.18em] uppercase mb-6 before:content-[''] before:block before:w-8 before:h-px before:bg-[#a8d4b0]"
+          className="flex items-center gap-2.5 text-[#a8d4b0] text-xs font-medium tracking-[0.18em] uppercase mb-6"
         >
           Land Investment Experts
         </motion.div>

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://royalrealty.co.ke
+
+# Sitemaps
+Sitemap: https://royalrealty.co.ke/sitemap.xml

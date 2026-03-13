@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function SellWithUs() {
   return (
-    <section id="sell" className="relative bg-[#F6F4ED] py-24 px-6">
+    <section id="sell" aria-label="Sell with Royal Realty" className="relative bg-[#F6F4ED] py-24 px-6">
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Header */}
         <motion.p

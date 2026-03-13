@@ -21,3 +21,11 @@ __pycache__/
 
 # OS
 .DS_Store
+
+
+server/instance
+server/migrations
+
+.fr-5d6z0j
+client.tar.gz
+server.tar.gz
