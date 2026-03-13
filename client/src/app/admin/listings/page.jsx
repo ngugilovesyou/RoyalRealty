@@ -61,9 +61,9 @@ export default function ListingsPage() {
 
       // Try both endpoints to see which one works
       const endpoints = [
-        '/api/lands/approved',
-        '/api/admin/lands/pending',
-        '/api/lands'
+        'https://royalrealtyapi.onrender.com/api/lands/approved',
+        'https://royalrealtyapi.onrender.com/api/admin/lands/pending',
+        'https://royalrealtyapi.onrender.com/api/lands'
       ];
 
       let successfulData = null;
@@ -119,8 +119,8 @@ export default function ListingsPage() {
     try {
       const token = localStorage.getItem('adminToken');
       const endpoint = newStatus === 'approved' 
-        ? `/api/admin/lands/${id}/approve`
-        : `/api/admin/lands/${id}/reject`;
+        ? `https://royalrealtyapi.onrender.com/api/admin/lands/${id}/approve`
+        : `https://royalrealtyapi.onrender.com/api/admin/lands/${id}/reject`;
       
       const response = await fetch(endpoint, {
         method: 'PUT',
@@ -147,7 +147,7 @@ export default function ListingsPage() {
   const confirmDelete = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`/api/admin/lands/${listingToDelete}`, {
+      const response = await fetch(`https://royalrealtyapi.onrender.com/api/admin/lands/${listingToDelete}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -168,7 +168,7 @@ export default function ListingsPage() {
   const handleEdit = async (listing) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`/api/admin/lands/${listing.id}`, {
+      const response = await fetch(`https://royalrealtyapi.onrender.com/api/admin/lands/${listing.id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -195,7 +195,7 @@ export default function ListingsPage() {
     e.preventDefault();
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`/api/admin/lands/${editingListing.id}`, {
+      const response = await fetch(`https://royalrealtyapi.onrender.com/api/admin/lands/${editingListing.id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -223,7 +223,7 @@ export default function ListingsPage() {
       
       // Delete each selected listing
       await Promise.all(selectedListings.map(async (id) => {
-        const response = await fetch(`/api/admin/lands/${id}`, {
+        const response = await fetch(`https://royalrealtyapi.onrender.com/api/admin/lands/${id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`

@@ -103,7 +103,7 @@ export default function LandsForSale() {
     const fetchLands = async () => {
       try {
         setLoading(true);
-        const response = await fetch("/api/lands");
+        const response = await fetch("https://royalrealtyapi.onrender.com/api/lands");
         const data = await response.json();
         
         if (Array.isArray(data)) {

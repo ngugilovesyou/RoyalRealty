@@ -116,7 +116,7 @@ export default function AdminDashboard() {
         
         // Fetch approved lands
         const approvedRes = await authenticatedFetch(
-          `/api/lands/approved?t=${timestamp}`
+          `https://royalrealtyapi.onrender.com/api/lands/approved?t=${timestamp}`
         );
         const approvedData = await approvedRes.json();
 

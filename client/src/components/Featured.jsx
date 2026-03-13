@@ -32,7 +32,7 @@ export default function FeaturedLands() {
   // Fetch lands
   const fetchLands = async () => {
     try {
-      const response = await fetch("/api/lands/featured");
+      const response = await fetch("https://royalrealtyapi.onrender.com/api/lands/featured");
       const data = await response.json();
       if (Array.isArray(data)) {
         console.log("Fetched lands:", data); // Debug log

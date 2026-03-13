@@ -77,7 +77,7 @@ export default function AdminLayout({ children }) {
       const token = localStorage.getItem('adminToken');
       
       try {
-        const response = await fetch('/api/admin/verify', {
+        const response = await fetch('https://royalrealtyapi.onrender.com/api/admin/verify', {
           headers: {
             'Authorization': `Bearer ${token}`
           }

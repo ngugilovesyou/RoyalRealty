@@ -70,7 +70,7 @@ export default function AdminLogin() {
 
   try {
     
-    const response = await fetch('/api/admin/login', {
+    const response = await fetch('https://royalrealtyapi.onrender.com/api/admin/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

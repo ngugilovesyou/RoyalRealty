@@ -67,7 +67,7 @@ export default function SellWithUsForm() {
     images.forEach((img, i) => dataToSend.append(`image_${i}`, img));
 
     try {
-      const res = await fetch(`/api/sell-land`, {
+      const res = await fetch(`https://royalrealtyapi.onrender.com/api/sell-land`, {
         method: 'POST',
         body: dataToSend
       });

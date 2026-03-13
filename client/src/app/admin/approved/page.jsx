@@ -55,7 +55,7 @@ const getImageUrl = (path) => {
         return;
       }
 
-      const res = await fetch("/api/lands/approved", {
+      const res = await fetch("https://royalrealtyapi.onrender.com//api/lands/approved", {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -104,7 +104,7 @@ const getImageUrl = (path) => {
     setActionLoading(true);
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await fetch(`/api/admin/lands/${id}`, { 
+      const res = await fetch(`https://royalrealtyapi.onrender.com/api/admin/lands/${id}`, { 
         method: "DELETE",
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -125,7 +125,7 @@ const getImageUrl = (path) => {
     setActionLoading(true);
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await fetch(`/api/admin/lands/${id}/reject`, { 
+      const res = await fetch(`https://royalrealtyapi.onrender.com/api/admin/lands/${id}/reject`, { 
         method: "PUT",
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -145,7 +145,7 @@ const getImageUrl = (path) => {
     setActionLoading(true);
     try {
       const token = localStorage.getItem('adminToken');
-      const res = await fetch(`/api/admin/lands/${selectedLand.id}`, {
+      const res = await fetch(`https://royalrealtyapi.onrender.com/api/admin/lands/${selectedLand.id}`, {
         method: "PUT",
         headers: { 
           "Content-Type": "application/json",

@@ -32,7 +32,7 @@ const handleSubmit = async (e) => {
   data.append("message", formData.message);
 
   try {
-    const res = await fetch("/api/contact", {
+    const res = await fetch("https://royalrealtyapi.onrender.com/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

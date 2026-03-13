@@ -145,7 +145,7 @@ export default function AdminCreateListingPage() {
         formDataToSend.append(`image_${index}`, image);
       });
 
-      const res = await fetch('/api/admin/lands/create', {
+      const res = await fetch('https://royalrealtyapi.onrender.com/api/admin/lands/create', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
