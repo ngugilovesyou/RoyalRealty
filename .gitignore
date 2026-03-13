@@ -24,7 +24,7 @@ __pycache__/
 
 
 server/instance
-server/migrations
+# server/migrations
 
 .fr-5d6z0j
 client.tar.gz
