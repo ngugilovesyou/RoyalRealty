@@ -27,13 +27,17 @@ app = Flask(
 )
 app.config.from_object(Config)
 
-CORS(app, 
-     resources={r"/api/*": {"origins": ["http://localhost:3000"]}},
-     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-     allow_headers=["Content-Type", "Authorization", "X-Requested-With"],
-     supports_credentials=True,
-     expose_headers=["Content-Type", "Authorization"],
-     max_age=3600)
+from flask_cors import CORS
+
+CORS(
+    app, 
+    resources={r"/api/*": {"origins": ["http://localhost:3000", "https://royal-realty-ten.vercel.app/"]}},
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization", "X-Requested-With"],
+    supports_credentials=True,
+    expose_headers=["Content-Type", "Authorization"],
+    max_age=3600
+)
 
 
 
