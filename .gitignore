@@ -2,3 +2,5 @@ server/.env
 server/instance
 server/migrations
 server/logs
+server/uploads
+server/static
