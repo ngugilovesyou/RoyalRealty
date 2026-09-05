@@ -6,23 +6,13 @@ export default function Hero() {
   const heroRef = useRef(null);
   const titleRef = useRef(null);
   const images = [
-  "https://res.cloudinary.com/dxwzdftzm/image/upload/v1782053049/nathan-cima-mh77deZj7_I-unsplash_llqaqh.jpg",
+  "https://res.cloudinary.com/dxwzdftzm/image/upload/f_auto,q_auto,w_1600/v1782053049/nathan-cima-mh77deZj7_I-unsplash_llqaqh.jpg"
   
 ];
 
   useEffect(() => {
     let ctx;
-
-    
-    const timeout = setTimeout(() => {
-      ctx = gsap.context(() => {
-        gsap.from(titleRef.current.querySelectorAll("h1"), {
-          y: 40,
-          opacity: 0,
-          stagger: 0.12,
-          duration: 0.9,
-          ease: "power3.out",
-        });
+ ctx = gsap.context(() => {
 
         gsap.from(".hero-btn", {
           y: 20,
@@ -55,10 +45,8 @@ export default function Hero() {
           ease: "none",
         });
       }, heroRef);
-    }, 150);
 
     return () => {
-      clearTimeout(timeout);
       ctx?.revert();
     };
   }, []);
@@ -69,7 +57,7 @@ export default function Hero() {
       
       <div className="absolute inset-0">
         <img
-          src={images[0]}
+          src={images}
           alt="Royal Realty Hero"
           loading="eager"
           fetchPriority="high"

@@ -13,7 +13,7 @@ export default function About() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       
-      // TEXT ANIMATION
+     
       gsap.from(contentRef.current, {
         opacity: 0,
         y: 40,
@@ -25,7 +25,7 @@ export default function About() {
         },
       });
 
-      // LEFT IMAGE (light animation)
+      
       gsap.from(leftImgRef.current, {
         opacity: 0,
         x: -60,
@@ -69,7 +69,7 @@ export default function About() {
       >
         <div className="w-64 overflow-hidden rounded-3xl shadow-2xl rotate-[-8deg]">
           <img
-            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=75&auto=format"
             className="h-80 w-full object-cover"
             loading="lazy"
             decoding="async"
@@ -85,7 +85,7 @@ export default function About() {
       >
         <div className="w-72 overflow-hidden rounded-3xl shadow-2xl rotate-[6deg]">
           <img
-            src="https://res.cloudinary.com/dxwzdftzm/image/upload/v1782117376/siva-xu-tXi-fAdCqWg-unsplash_xyjq7r.jpg"
+            src="https://res.cloudinary.com/dxwzdftzm/image/upload/f_auto,q_auto,w_800/v1782117376/siva-xu-tXi-fAdCqWg-unsplash_xyjq7r.jpg"
             className="h-96 w-full object-cover"
             loading="lazy"
             decoding="async"

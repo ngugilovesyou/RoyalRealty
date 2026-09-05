@@ -15,7 +15,6 @@ export default function SellWithUs() {
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      // MAIN CONTENT (single animation = cheaper)
       gsap.from(contentRef.current, {
         opacity: 0,
         y: 40,
@@ -83,7 +82,7 @@ export default function SellWithUs() {
       >
         <div className="w-80 overflow-hidden rounded-[32px] shadow-2xl rotate-[5deg]">
           <img
-            src="https://res.cloudinary.com/dxwzdftzm/image/upload/v1782117235/joseph-malone-ryfkelQAEbA-unsplash_x3unhe.jpg"
+            src="https://res.cloudinary.com/dxwzdftzm/image/upload/f_auto,q_auto,w_800/v1782117235/joseph-malone-ryfkelQAEbA-unsplash_x3unhe.jpg"
             loading="lazy"
             decoding="async"
             alt="sell property"
@@ -99,7 +98,7 @@ export default function SellWithUs() {
       >
         <div className="w-64 overflow-hidden rounded-[28px] shadow-xl rotate-[-7deg]">
           <img
-            src="https://res.cloudinary.com/dxwzdftzm/image/upload/v1782117040/abbas-tehrani-9HHBhTULZ_o-unsplash_cs7aus.jpg"
+            src="https://res.cloudinary.com/dxwzdftzm/image/upload/f_auto,q_auto,w_800/v1782117040/abbas-tehrani-9HHBhTULZ_o-unsplash_cs7aus.jpg"
             loading="lazy"
             decoding="async"
             alt="real estate"
