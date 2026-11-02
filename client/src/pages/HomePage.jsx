@@ -4,14 +4,18 @@ import Head from "../components/Head";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import FeaturedLands from "../components/Featured";
-import SellWithUs from "../components/SellWithUs";
-import Footer from "../components/Footer";
-import Testimonials from "../components/Testimonial";
+
+const SellWithUs = lazy(() => import("../components/SellWithUs"));
+const Testimonials = lazy(() => import("../components/Testimonial"));
+const Footer = lazy(() => import("../components/Footer"));
+
+
+const Placeholder = ({ h }) => <div style={{ minHeight: h }} aria-hidden="true" />;
 
 export default function HomePage() {
   return (
     <>
-      <Head 
+      <Head
         title="Royal Realty – Modern Real Estate Brokerage"
         description="Royal Realty is a real estate brokerage designed for today's market..."
         keywords="real estate, land for sale, property investment, Kenya"
@@ -21,25 +25,24 @@ export default function HomePage() {
       <Navbar />
       <Hero />
 
-      <Suspense fallback={null}>
-        <section id="about">
-          <About />
-        </section>
+      <section id="about">
+        <About />
+      </section>
 
-        <section id="lands">
-          <FeaturedLands />
-        </section>
+      <FeaturedLands />
 
+      <Suspense fallback={<Placeholder h={600} />}>
         <section id="sell">
           <SellWithUs />
         </section>
-
         <section id="testimonials">
           <Testimonials />
         </section>
       </Suspense>
 
-      <Footer />
+      <Suspense fallback={<Placeholder h={320} />}>
+        <Footer />
+      </Suspense>
     </>
   );
 }

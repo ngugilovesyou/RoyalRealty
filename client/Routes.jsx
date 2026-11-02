@@ -1,70 +1,64 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./src/pages/HomePage";
-import LandsForSale from "./src/components/projects/LandsForSale";
-import ContactPage from "./src/components/contact/ContactPage";
-import InquiryPage from "./src/components/Inquiry/Inquiry";
-import SellWithUsForm from "./src/components/sell-with-us/SellWithUsForm";
-import AdminLogin from "./src/components/admin/Auth";
-import AdminLayout from "./src/components/admin/AdminLayout";
-import AdminDashboard from "./src/components/admin/AdminDashboard";
-import ListingsPage from "./src/components/admin/listings/ListingPage";
-import AdminCreateListingPage from "./src/components/admin/new/AdminCreateListingPage";
-import AdminLandApproval from "./src/components/admin/AdminLandApproval";
-import PendingApprovals from "./src/components/admin/PendingApprovals";
 import ErrorBoundary from "./src/pages/ErrorBoundary";
-import LandDetails from "./src/components/LandDetails";
+
+const lazyRoute = (importFn) => ({
+  lazy: async () => ({ Component: (await importFn()).default }),
+});
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <ErrorBoundary />,
   },
   {
     path: "/lands/:slug",
-    element: <LandDetails />,
+    ...lazyRoute(() => import("./src/components/LandDetails")),
   },
   {
     path: "/contact-us",
-    element: <ContactPage />,
+    ...lazyRoute(() => import("./src/components/contact/ContactPage")),
   },
   {
     path: "/inquiry/:slug",
-    element: <InquiryPage />,
+    ...lazyRoute(() => import("./src/components/Inquiry/Inquiry")),
   },
   {
     path: "/sell-with-us",
-    element: <SellWithUsForm />,
+    ...lazyRoute(() => import("./src/components/sell-with-us/SellWithUsForm")),
   },
   {
     path: "/projects",
-    element: <LandsForSale />, 
+    ...lazyRoute(() => import("./src/components/projects/LandsForSale")),
   },
   {
     path: "/admin/auth",
-    element: <AdminLogin />,
+    ...lazyRoute(() => import("./src/components/admin/Auth")),
   },
   {
     path: "/admin",
-    element: <AdminLayout />,
+    ...lazyRoute(() => import("./src/components/admin/AdminLayout")),
     children: [
       {
         index: true,
-        element: <AdminDashboard />,
+        ...lazyRoute(() => import("./src/components/admin/AdminDashboard")),
       },
       {
         path: "listings",
-        element: <ListingsPage />,
+        ...lazyRoute(() => import("./src/components/admin/listings/ListingPage")),
       },
       {
         path: "listings/new",
-        element: <AdminCreateListingPage />,
+        ...lazyRoute(() => import("./src/components/admin/new/AdminCreateListingPage")),
       },
       {
         path: "approved",
-        element: <AdminLandApproval />,
+        ...lazyRoute(() => import("./src/components/admin/AdminLandApproval")),
       },
       {
         path: "pending",
-        element: <PendingApprovals />,
+        ...lazyRoute(() => import("./src/components/admin/PendingApprovals")),
       },
     ],
   },
